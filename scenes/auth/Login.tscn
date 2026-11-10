@@ -1,0 +1,265 @@
+[gd_scene format=3 uid="uid://c08wmur076wom"]
+
+[ext_resource type="Script" uid="uid://b5ep8ay4n1pqu" path="res://scripts/auth/Login.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle"]
+content_margin_left = 34.0
+content_margin_top = 30.0
+content_margin_right = 34.0
+content_margin_bottom = 26.0
+bg_color = Color(0.075, 0.09, 0.14, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.22, 0.31, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 18
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="InputNormal"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.045, 0.058, 0.09, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.24, 0.33, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="InputFocus"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.055, 0.075, 0.12, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.25, 0.52, 0.95, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+shadow_color = Color(0.25, 0.52, 0.95, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="ButtonNormal"]
+bg_color = Color(0.16, 0.39, 0.78, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="ButtonHover"]
+bg_color = Color(0.2, 0.46, 0.88, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="ButtonPressed"]
+bg_color = Color(0.12, 0.3, 0.62, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="SecondaryNormal"]
+bg_color = Color(0.09, 0.12, 0.18, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.23, 0.28, 0.38, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="SecondaryHover"]
+bg_color = Color(0.14, 0.19, 0.29, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.4, 0.56, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="SecondaryPressed"]
+bg_color = Color(0.07, 0.09, 0.14, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.4, 0.56, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxEmpty" id="ButtonFocus"]
+
+[node name="Login" type="Control" unique_id=1211472417]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=603561972]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.035, 0.045, 0.075, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1027007957]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoginPanel" type="PanelContainer" parent="CenterContainer" unique_id=959637724]
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("PanelStyle")
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/LoginPanel" unique_id=32689494]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="GameTitle" type="Label" parent="CenterContainer/LoginPanel/Content" unique_id=1143837812]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91, 0.72, 0.39, 1)
+theme_override_font_sizes/font_size = 34
+text = "RUNAFORGE"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="CenterContainer/LoginPanel/Content" unique_id=1075536210]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.68, 0.79, 1)
+theme_override_font_sizes/font_size = 13
+text = "LA AVENTURA COMIENZA"
+horizontal_alignment = 1
+
+[node name="Separator" type="HSeparator" parent="CenterContainer/LoginPanel/Content" unique_id=1423689471]
+layout_mode = 2
+
+[node name="FormTitle" type="Label" parent="CenterContainer/LoginPanel/Content" unique_id=1900100001]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.95, 0.98, 1)
+theme_override_font_sizes/font_size = 21
+text = "Iniciar sesión"
+horizontal_alignment = 1
+
+[node name="FormDescription" type="Label" parent="CenterContainer/LoginPanel/Content" unique_id=1900100002]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57, 0.63, 0.73, 1)
+theme_override_font_sizes/font_size = 12
+text = "Ingresa tus credenciales para continuar."
+horizontal_alignment = 1
+
+[node name="UsernameLabel" type="Label" parent="CenterContainer/LoginPanel/Content" unique_id=660932191]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.86, 0.93, 1)
+theme_override_font_sizes/font_size = 12
+text = "USUARIO"
+
+[node name="UsernameInput" type="LineEdit" parent="CenterContainer/LoginPanel/Content" unique_id=1696103579]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.95, 0.98, 1)
+theme_override_colors/font_placeholder_color = Color(0.42, 0.47, 0.57, 1)
+theme_override_colors/caret_color = Color(0.35, 0.59, 0.98, 1)
+theme_override_styles/normal = SubResource("InputNormal")
+theme_override_styles/focus = SubResource("InputFocus")
+placeholder_text = "Nombre de usuario o correo"
+
+[node name="PasswordLabel" type="Label" parent="CenterContainer/LoginPanel/Content" unique_id=660932192]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.86, 0.93, 1)
+theme_override_font_sizes/font_size = 12
+text = "CONTRASEÑA"
+
+[node name="PasswordInput" type="LineEdit" parent="CenterContainer/LoginPanel/Content" unique_id=1667808146]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.95, 0.98, 1)
+theme_override_colors/font_placeholder_color = Color(0.42, 0.47, 0.57, 1)
+theme_override_colors/caret_color = Color(0.35, 0.59, 0.98, 1)
+theme_override_styles/normal = SubResource("InputNormal")
+theme_override_styles/focus = SubResource("InputFocus")
+placeholder_text = "Contraseña"
+secret = true
+
+[node name="ErrorLabel" type="Label" parent="CenterContainer/LoginPanel/Content" unique_id=704663346]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36, 0.36, 1)
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="LoginButton" type="Button" parent="CenterContainer/LoginPanel/Content" unique_id=45158201]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_styles/normal = SubResource("ButtonNormal")
+theme_override_styles/pressed = SubResource("ButtonPressed")
+theme_override_styles/hover = SubResource("ButtonHover")
+text = "INICIAR SESIÓN"
+
+[node name="OrLabel" type="Label" parent="CenterContainer/LoginPanel/Content" unique_id=1900100003]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.46, 0.56, 1)
+theme_override_font_sizes/font_size = 11
+text = "¿AÚN NO TIENES CUENTA?"
+horizontal_alignment = 1
+
+[node name="RegisterButton" type="Button" parent="CenterContainer/LoginPanel/Content" unique_id=1478747229]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.8, 0.89, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_styles/normal = SubResource("SecondaryNormal")
+theme_override_styles/pressed = SubResource("SecondaryPressed")
+theme_override_styles/hover = SubResource("SecondaryHover")
+text = "CREAR CUENTA"
+
+[node name="Footer" type="Label" parent="CenterContainer/LoginPanel/Content" unique_id=1900100004]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.46, 0.56, 1)
+theme_override_font_sizes/font_size = 10
+text = "RUNAFORGE  •  ADVENTURE AWAITS"
+horizontal_alignment = 1
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=2143027230]

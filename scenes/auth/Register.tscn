@@ -1,0 +1,288 @@
+[gd_scene format=3 uid="uid://vjgp7piajb67"]
+
+[ext_resource type="Script" uid="uid://bogm40fh18fff" path="res://scripts/auth/Register.gd" id="1_register"]
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle"]
+content_margin_left = 34.0
+content_margin_top = 22.0
+content_margin_right = 34.0
+content_margin_bottom = 20.0
+bg_color = Color(0.075, 0.09, 0.14, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.22, 0.31, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 18
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="InputNormal"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.045, 0.058, 0.09, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.24, 0.33, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="InputFocus"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.055, 0.075, 0.12, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.25, 0.52, 0.95, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+shadow_color = Color(0.25, 0.52, 0.95, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="ButtonNormal"]
+bg_color = Color(0.16, 0.39, 0.78, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="ButtonPressed"]
+bg_color = Color(0.12, 0.3, 0.62, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="ButtonHover"]
+bg_color = Color(0.2, 0.46, 0.88, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="BackButtonStyle"]
+bg_color = Color(0.09, 0.12, 0.18, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.23, 0.28, 0.38, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="BackButtonHover"]
+bg_color = Color(0.14, 0.19, 0.29, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.4, 0.56, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="BackButtonPressed"]
+bg_color = Color(0.07, 0.09, 0.14, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.4, 0.56, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxEmpty" id="ButtonFocus"]
+
+[node name="Register" type="Control" unique_id=309370709]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_register")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1217812298]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.035, 0.045, 0.075, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1642024830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RegisterPanel" type="PanelContainer" parent="CenterContainer" unique_id=2061964579]
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("PanelStyle")
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer/RegisterPanel" unique_id=116952095]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Brand" type="Label" parent="CenterContainer/RegisterPanel/Content" unique_id=1396581781]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91, 0.72, 0.39, 1)
+theme_override_font_sizes/font_size = 30
+text = "RUNAFORGE"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="CenterContainer/RegisterPanel/Content" unique_id=1887396694]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.68, 0.79, 1)
+theme_override_font_sizes/font_size = 13
+text = "FORJA TU PROPIA LEYENDA"
+horizontal_alignment = 1
+
+[node name="Separator" type="HSeparator" parent="CenterContainer/RegisterPanel/Content" unique_id=258387267]
+layout_mode = 2
+
+[node name="FormTitle" type="Label" parent="CenterContainer/RegisterPanel/Content" unique_id=2084090694]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.95, 0.98, 1)
+theme_override_font_sizes/font_size = 21
+text = "Crear una cuenta"
+horizontal_alignment = 1
+
+
+[node name="UsernameLabel" type="Label" parent="CenterContainer/RegisterPanel/Content" unique_id=1998791937]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.86, 0.93, 1)
+theme_override_font_sizes/font_size = 12
+text = "NOMBRE DE USUARIO"
+
+[node name="UsernameInput" type="LineEdit" parent="CenterContainer/RegisterPanel/Content" unique_id=1608917629]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.95, 0.98, 1)
+theme_override_colors/font_placeholder_color = Color(0.42, 0.47, 0.57, 1)
+theme_override_colors/caret_color = Color(0.35, 0.59, 0.98, 1)
+theme_override_styles/normal = SubResource("InputNormal")
+theme_override_styles/focus = SubResource("InputFocus")
+placeholder_text = "Ej. guerrero123"
+max_length = 30
+
+[node name="EmailLabel" type="Label" parent="CenterContainer/RegisterPanel/Content" unique_id=1482340901]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.86, 0.93, 1)
+theme_override_font_sizes/font_size = 12
+text = "CORREO ELECTRÓNICO"
+
+[node name="EmailInput" type="LineEdit" parent="CenterContainer/RegisterPanel/Content" unique_id=1041773224]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.95, 0.98, 1)
+theme_override_colors/font_placeholder_color = Color(0.42, 0.47, 0.57, 1)
+theme_override_colors/caret_color = Color(0.35, 0.59, 0.98, 1)
+theme_override_styles/normal = SubResource("InputNormal")
+theme_override_styles/focus = SubResource("InputFocus")
+placeholder_text = "correo@ejemplo.com"
+max_length = 150
+
+[node name="PasswordLabel" type="Label" parent="CenterContainer/RegisterPanel/Content" unique_id=1280352390]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.86, 0.93, 1)
+theme_override_font_sizes/font_size = 12
+text = "CONTRASEÑA"
+
+[node name="PasswordInput" type="LineEdit" parent="CenterContainer/RegisterPanel/Content" unique_id=1732600818]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.95, 0.98, 1)
+theme_override_colors/font_placeholder_color = Color(0.42, 0.47, 0.57, 1)
+theme_override_colors/caret_color = Color(0.35, 0.59, 0.98, 1)
+theme_override_styles/normal = SubResource("InputNormal")
+theme_override_styles/focus = SubResource("InputFocus")
+placeholder_text = "Mínimo 8 caracteres"
+secret = true
+
+[node name="ConfirmPasswordLabel" type="Label" parent="CenterContainer/RegisterPanel/Content" unique_id=1754893858]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.86, 0.93, 1)
+theme_override_font_sizes/font_size = 12
+text = "CONFIRMAR CONTRASEÑA"
+
+[node name="ConfirmPasswordInput" type="LineEdit" parent="CenterContainer/RegisterPanel/Content" unique_id=249663742]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.95, 0.98, 1)
+theme_override_colors/font_placeholder_color = Color(0.42, 0.47, 0.57, 1)
+theme_override_colors/caret_color = Color(0.35, 0.59, 0.98, 1)
+theme_override_styles/normal = SubResource("InputNormal")
+theme_override_styles/focus = SubResource("InputFocus")
+placeholder_text = "Repite tu contraseña"
+secret = true
+
+[node name="ErrorLabel" type="Label" parent="CenterContainer/RegisterPanel/Content" unique_id=749413631]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36, 0.36, 1)
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="RegisterButton" type="Button" parent="CenterContainer/RegisterPanel/Content" unique_id=624951720]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_styles/normal = SubResource("ButtonNormal")
+theme_override_styles/pressed = SubResource("ButtonPressed")
+theme_override_styles/hover = SubResource("ButtonHover")
+text = "CREAR CUENTA"
+
+[node name="OrLabel" type="Label" parent="CenterContainer/RegisterPanel/Content" unique_id=1900200001]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.46, 0.56, 1)
+theme_override_font_sizes/font_size = 11
+text = "¿YA TIENES CUENTA?"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="CenterContainer/RegisterPanel/Content" unique_id=1769037936]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.8, 0.89, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_styles/normal = SubResource("BackButtonStyle")
+theme_override_styles/pressed = SubResource("BackButtonPressed")
+theme_override_styles/hover = SubResource("BackButtonHover")
+text = "VOLVER AL INICIO DE SESIÓN"
+
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1257479894]

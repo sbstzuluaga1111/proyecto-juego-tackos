@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Proyecto juego Tackos"
+run/main_scene="res://scenes/auth/Login.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Session="*uid://fh6p08e0fysh"
 
 [display]
 

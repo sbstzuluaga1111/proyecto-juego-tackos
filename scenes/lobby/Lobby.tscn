@@ -1,0 +1,554 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/lobby/Lobby.gd" id="1_lobby"]
+
+[sub_resource type="StyleBoxFlat" id="CardStyle"]
+content_margin_left = 20
+content_margin_top = 18
+content_margin_right = 20
+content_margin_bottom = 18
+bg_color = Color(0.075, 0.09, 0.14, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.22, 0.31, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 16
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="TopBarStyle"]
+content_margin_left = 18
+content_margin_top = 10
+content_margin_right = 18
+content_margin_bottom = 10
+bg_color = Color(0.075, 0.09, 0.14, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.22, 0.31, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 12
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="InsetStyle"]
+content_margin_left = 12
+content_margin_top = 10
+content_margin_right = 12
+content_margin_bottom = 10
+bg_color = Color(0.045, 0.058, 0.09, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.24, 0.33, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="ChipStyle"]
+content_margin_left = 14
+content_margin_top = 6
+content_margin_right = 14
+content_margin_bottom = 6
+bg_color = Color(0.045, 0.058, 0.09, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.23, 0.28, 0.38, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="AvatarStyle"]
+bg_color = Color(0.16, 0.39, 0.78, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.59, 0.98, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="StyleBoxFlat" id="PlayNormal"]
+bg_color = Color(0.91, 0.72, 0.39, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.91, 0.72, 0.39, 0.35)
+shadow_size = 14
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="PlayHover"]
+bg_color = Color(0.96, 0.8, 0.5, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.91, 0.72, 0.39, 0.5)
+shadow_size = 18
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="PlayPressed"]
+bg_color = Color(0.78, 0.6, 0.3, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="SecNormal"]
+bg_color = Color(0.09, 0.12, 0.18, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.23, 0.28, 0.38, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="SecHover"]
+bg_color = Color(0.14, 0.19, 0.29, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.4, 0.56, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="SecPressed"]
+bg_color = Color(0.07, 0.09, 0.14, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.4, 0.56, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="DangerNormal"]
+bg_color = Color(0.16, 0.08, 0.1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7, 0.25, 0.28, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="DangerHover"]
+bg_color = Color(0.55, 0.15, 0.18, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.85, 0.3, 0.33, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="DangerPressed"]
+bg_color = Color(0.4, 0.1, 0.13, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.85, 0.3, 0.33, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="XPBack"]
+bg_color = Color(0.045, 0.058, 0.09, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.24, 0.33, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="XPFill"]
+bg_color = Color(0.91, 0.72, 0.39, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="ButtonFocus"]
+
+[node name="Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lobby")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.035, 0.045, 0.075, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Layout" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="TopBar" type="PanelContainer" parent="Margin/Layout"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("TopBarStyle")
+
+[node name="TopBarContent" type="HBoxContainer" parent="Margin/Layout/TopBar"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Brand" type="Label" parent="Margin/Layout/TopBar/TopBarContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91, 0.72, 0.39, 1)
+theme_override_font_sizes/font_size = 24
+text = "RUNAFORGE"
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="Margin/Layout/TopBar/TopBarContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoldChip" type="PanelContainer" parent="Margin/Layout/TopBar/TopBarContent"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("ChipStyle")
+
+[node name="GoldLabel" type="Label" parent="Margin/Layout/TopBar/TopBarContent/GoldChip"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.8, 0.5, 1)
+theme_override_font_sizes/font_size = 12
+text = "ORO  1250"
+
+[node name="GemsChip" type="PanelContainer" parent="Margin/Layout/TopBar/TopBarContent"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("ChipStyle")
+
+[node name="GemsLabel" type="Label" parent="Margin/Layout/TopBar/TopBarContent/GemsChip"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "GEMAS  50"
+
+[node name="PlayerCard" type="HBoxContainer" parent="Margin/Layout/TopBar/TopBarContent"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="AvatarPanel" type="PanelContainer" parent="Margin/Layout/TopBar/TopBarContent/PlayerCard"]
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+theme_override_styles/panel = SubResource("AvatarStyle")
+
+[node name="AvatarInitial" type="Label" parent="Margin/Layout/TopBar/TopBarContent/PlayerCard/AvatarPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "J"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerInfo" type="VBoxContainer" parent="Margin/Layout/TopBar/TopBarContent/PlayerCard"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="PlayerName" type="Label" parent="Margin/Layout/TopBar/TopBarContent/PlayerCard/PlayerInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.95, 0.98, 1)
+theme_override_font_sizes/font_size = 14
+text = "Jugador"
+
+[node name="PlayerLevel" type="Label" parent="Margin/Layout/TopBar/TopBarContent/PlayerCard/PlayerInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57, 0.63, 0.73, 1)
+theme_override_font_sizes/font_size = 11
+text = "Nivel 1"
+
+[node name="LogoutButton" type="Button" parent="Margin/Layout/TopBar/TopBarContent"]
+custom_minimum_size = Vector2(140, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0.6, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_styles/normal = SubResource("DangerNormal")
+theme_override_styles/hover = SubResource("DangerHover")
+theme_override_styles/pressed = SubResource("DangerPressed")
+text = "CERRAR SESIÓN"
+
+[node name="MainArea" type="HBoxContainer" parent="Margin/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="LeftPanel" type="PanelContainer" parent="Margin/Layout/MainArea"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("CardStyle")
+
+[node name="LeftContent" type="VBoxContainer" parent="Margin/Layout/MainArea/LeftPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LeftTitle" type="Label" parent="Margin/Layout/MainArea/LeftPanel/LeftContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.86, 0.93, 1)
+theme_override_font_sizes/font_size = 12
+text = "PERSONAJE"
+
+[node name="LeftSep" type="HSeparator" parent="Margin/Layout/MainArea/LeftPanel/LeftContent"]
+layout_mode = 2
+
+[node name="CharacterPlaceholder" type="PanelContainer" parent="Margin/Layout/MainArea/LeftPanel/LeftContent"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("InsetStyle")
+
+[node name="CharacterLabel" type="Label" parent="Margin/Layout/MainArea/LeftPanel/LeftContent/CharacterPlaceholder"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0.47, 0.57, 1)
+theme_override_font_sizes/font_size = 12
+text = "Vista previa del personaje"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="XPLabel" type="Label" parent="Margin/Layout/MainArea/LeftPanel/LeftContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57, 0.63, 0.73, 1)
+theme_override_font_sizes/font_size = 11
+text = "Nivel 1   •   35 / 100 XP"
+
+[node name="XPBar" type="ProgressBar" parent="Margin/Layout/MainArea/LeftPanel/LeftContent"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/background = SubResource("XPBack")
+theme_override_styles/fill = SubResource("XPFill")
+value = 35.0
+show_percentage = false
+
+[node name="CenterArea" type="CenterContainer" parent="Margin/Layout/MainArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HeroBox" type="VBoxContainer" parent="Margin/Layout/MainArea/CenterArea"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="WelcomeLabel" type="Label" parent="Margin/Layout/MainArea/CenterArea/HeroBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91, 0.72, 0.39, 1)
+theme_override_font_sizes/font_size = 36
+text = "BIENVENIDO AL LOBBY"
+horizontal_alignment = 1
+
+[node name="HeroSubtitle" type="Label" parent="Margin/Layout/MainArea/CenterArea/HeroBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.68, 0.79, 1)
+theme_override_font_sizes/font_size = 13
+text = "FORJA TU PROPIA LEYENDA"
+horizontal_alignment = 1
+
+[node name="HeroSpacer" type="Control" parent="Margin/Layout/MainArea/CenterArea/HeroBox"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="Margin/Layout/MainArea/CenterArea/HeroBox"]
+custom_minimum_size = Vector2(300, 64)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.08, 0.04, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.08, 0.04, 1)
+theme_override_colors/font_pressed_color = Color(0.1, 0.08, 0.04, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_styles/normal = SubResource("PlayNormal")
+theme_override_styles/hover = SubResource("PlayHover")
+theme_override_styles/pressed = SubResource("PlayPressed")
+text = "JUGAR"
+
+[node name="ServerStatus" type="Label" parent="Margin/Layout/MainArea/CenterArea/HeroBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.8, 0.5, 1)
+theme_override_font_sizes/font_size = 11
+text = "●  SERVIDOR EN LÍNEA"
+horizontal_alignment = 1
+
+[node name="RightPanel" type="PanelContainer" parent="Margin/Layout/MainArea"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("CardStyle")
+
+[node name="RightContent" type="VBoxContainer" parent="Margin/Layout/MainArea/RightPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="NewsTitle" type="Label" parent="Margin/Layout/MainArea/RightPanel/RightContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.86, 0.93, 1)
+theme_override_font_sizes/font_size = 12
+text = "NOVEDADES"
+
+[node name="NewsSep" type="HSeparator" parent="Margin/Layout/MainArea/RightPanel/RightContent"]
+layout_mode = 2
+
+[node name="News1" type="PanelContainer" parent="Margin/Layout/MainArea/RightPanel/RightContent"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("InsetStyle")
+
+[node name="News1Text" type="Label" parent="Margin/Layout/MainArea/RightPanel/RightContent/News1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.8, 0.89, 1)
+theme_override_font_sizes/font_size = 12
+text = "Bienvenido a RUNAFORGE. El mundo te espera."
+autowrap_mode = 3
+
+[node name="News2" type="PanelContainer" parent="Margin/Layout/MainArea/RightPanel/RightContent"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("InsetStyle")
+
+[node name="News2Text" type="Label" parent="Margin/Layout/MainArea/RightPanel/RightContent/News2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.8, 0.89, 1)
+theme_override_font_sizes/font_size = 12
+text = "Versión alfa: tus comentarios nos ayudan a mejorar."
+autowrap_mode = 3
+
+[node name="FriendsSpacer" type="Control" parent="Margin/Layout/MainArea/RightPanel/RightContent"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="FriendsTitle" type="Label" parent="Margin/Layout/MainArea/RightPanel/RightContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.86, 0.93, 1)
+theme_override_font_sizes/font_size = 12
+text = "AMIGOS"
+
+[node name="FriendsSep" type="HSeparator" parent="Margin/Layout/MainArea/RightPanel/RightContent"]
+layout_mode = 2
+
+[node name="FriendsEmpty" type="Label" parent="Margin/Layout/MainArea/RightPanel/RightContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0.47, 0.57, 1)
+theme_override_font_sizes/font_size = 12
+text = "Ningún amigo conectado."
+autowrap_mode = 3
+
+[node name="BottomBar" type="PanelContainer" parent="Margin/Layout"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("TopBarStyle")
+
+[node name="BottomContent" type="HBoxContainer" parent="Margin/Layout/BottomBar"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="InventoryButton" type="Button" parent="Margin/Layout/BottomBar/BottomContent"]
+custom_minimum_size = Vector2(130, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.8, 0.89, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_styles/normal = SubResource("SecNormal")
+theme_override_styles/hover = SubResource("SecHover")
+theme_override_styles/pressed = SubResource("SecPressed")
+text = "INVENTARIO"
+
+[node name="ShopButton" type="Button" parent="Margin/Layout/BottomBar/BottomContent"]
+custom_minimum_size = Vector2(130, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.8, 0.89, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_styles/normal = SubResource("SecNormal")
+theme_override_styles/hover = SubResource("SecHover")
+theme_override_styles/pressed = SubResource("SecPressed")
+text = "TIENDA"
+
+[node name="QuestsButton" type="Button" parent="Margin/Layout/BottomBar/BottomContent"]
+custom_minimum_size = Vector2(130, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.8, 0.89, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_styles/normal = SubResource("SecNormal")
+theme_override_styles/hover = SubResource("SecHover")
+theme_override_styles/pressed = SubResource("SecPressed")
+text = "MISIONES"
+
+[node name="SettingsButton" type="Button" parent="Margin/Layout/BottomBar/BottomContent"]
+custom_minimum_size = Vector2(130, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.8, 0.89, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/focus = SubResource("ButtonFocus")
+theme_override_styles/normal = SubResource("SecNormal")
+theme_override_styles/hover = SubResource("SecHover")
+theme_override_styles/pressed = SubResource("SecPressed")
+text = "AJUSTES"
+
+[node name="BottomSpacer" type="Control" parent="Margin/Layout/BottomBar/BottomContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VersionLabel" type="Label" parent="Margin/Layout/BottomBar/BottomContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.46, 0.56, 1)
+theme_override_font_sizes/font_size = 10
+text = "RUNAFORGE  •  v0.1.0"
+vertical_alignment = 1
